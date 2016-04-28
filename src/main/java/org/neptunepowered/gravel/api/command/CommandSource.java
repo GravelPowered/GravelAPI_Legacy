@@ -22,31 +22,29 @@
  * THE SOFTWARE.
  */
 
-package org.neptunepowered.gravel.api;
+package org.neptunepowered.gravel.api.command;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.neptunepowered.gravel.api.command.CommandSource;
 
 import java.util.Optional;
 
 /**
- * Represents the Minecraft server.
+ * Represents a source, of which can use commands.
  */
-public interface Server extends CommandSource {
+public interface CommandSource {
 
     /**
-     * {@inheritDoc}
+     * Get the name of the source.
+     * For example if the source is a player, this will return their name.
+     *
+     * @return The name
      */
-    @Override
-    default String getName() {
-        return "Server";
-    }
+    String getName();
 
     /**
-     * {@inheritDoc}
+     * Gets the location of the source.
+     *
+     * @return The location
      */
-    @Override
-    default Optional<Vector3d> getLocation() {
-        return Optional.empty();
-    }
+    Optional<Vector3d> getLocation();
 }

@@ -24,6 +24,7 @@ repositories {
 
 dependencies {
     compile 'com.google.guava:guava:19.0'
+    compile 'com.flowpowered:flow-math:1.0.1'
 }
 
 task javadocJar(type: Jar, dependsOn: 'javadoc') {

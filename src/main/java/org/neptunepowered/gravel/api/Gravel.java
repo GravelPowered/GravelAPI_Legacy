@@ -25,6 +25,7 @@
 package org.neptunepowered.gravel.api;
 
 import com.google.common.base.Preconditions;
+import org.neptunepowered.gravel.api.command.CommandManager;
 import org.neptunepowered.gravel.api.event.EventManager;
 import org.neptunepowered.gravel.api.plugin.PluginManager;
 
@@ -56,13 +57,13 @@ public final class Gravel {
     }
 
     /**
-     * Gets the {@link PluginManager}.
+     * Gets the {@link CommandManager}.
      *
-     * @return The plugin manager
-     * @see System#getPluginManager()
+     * @return The command manager
+     * @see System#getCommandManager()
      */
-    public static PluginManager getPluginManager() {
-        return getSystem().getPluginManager();
+    public static CommandManager getCommandManager() {
+        return getSystem().getCommandManager();
     }
 
     /**
@@ -73,5 +74,15 @@ public final class Gravel {
      */
     public static EventManager getEventManager() {
         return getSystem().getEventManager();
+    }
+
+    /**
+     * Gets the {@link PluginManager}.
+     *
+     * @return The plugin manager
+     * @see System#getPluginManager()
+     */
+    public static PluginManager getPluginManager() {
+        return getSystem().getPluginManager();
     }
 }

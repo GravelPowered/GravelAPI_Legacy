@@ -22,31 +22,20 @@
  * THE SOFTWARE.
  */
 
-package org.neptunepowered.gravel.api;
-
-import com.flowpowered.math.vector.Vector3d;
-import org.neptunepowered.gravel.api.command.CommandSource;
-
-import java.util.Optional;
+package org.neptunepowered.gravel.api.command;
 
 /**
- * Represents the Minecraft server.
+ * Represents the command manager.
+ * From here you can register commands.
  */
-public interface Server extends CommandSource {
+public interface CommandManager {
 
     /**
-     * {@inheritDoc}
+     * Registers the given command, with the given aliases.
+     *
+     * @param plugin The plugin instance
+     * @param command The command to register
+     * @param aliases The aliases to use
      */
-    @Override
-    default String getName() {
-        return "Server";
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    default Optional<Vector3d> getLocation() {
-        return Optional.empty();
-    }
+    void registerCommand(Object plugin, CommandCallable command, String... aliases);
 }

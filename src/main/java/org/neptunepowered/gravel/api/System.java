@@ -24,6 +24,7 @@
 
 package org.neptunepowered.gravel.api;
 
+import org.neptunepowered.gravel.api.command.CommandManager;
 import org.neptunepowered.gravel.api.event.EventManager;
 import org.neptunepowered.gravel.api.plugin.PluginManager;
 
@@ -40,11 +41,11 @@ public interface System {
     Server getServer();
 
     /**
-     * Gets the {@link PluginManager}.
+     * Gets the {@link CommandManager}.
      *
-     * @return The plugin manager
+     * @return The command manager
      */
-    PluginManager getPluginManager();
+    CommandManager getCommandManager();
 
     /**
      * Gets the {@link EventManager}.
@@ -52,4 +53,11 @@ public interface System {
      * @return The event manager
      */
     EventManager getEventManager();
+
+    /**
+     * Gets the {@link PluginManager}.
+     *
+     * @return The plugin manager
+     */
+    PluginManager getPluginManager();
 }

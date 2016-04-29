@@ -22,29 +22,11 @@
  * THE SOFTWARE.
  */
 
-package org.neptunepowered.gravel.api.command;
-
-import org.neptunepowered.gravel.api.util.Location;
-
-import java.util.Optional;
+package org.neptunepowered.gravel.api.world;
 
 /**
- * Represents a source, of which can use commands.
+ * Represents the world.
  */
-public interface CommandSource {
+public interface World {
 
-    /**
-     * Get the name of the source.
-     * For example if the source is a player, this will return their name.
-     *
-     * @return The name
-     */
-    String getName();
-
-    /**
-     * Gets the {@link Location} of the source.
-     *
-     * @return The location
-     */
-    Optional<Location> getLocation();
 }

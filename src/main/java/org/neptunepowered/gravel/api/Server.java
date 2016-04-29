@@ -35,6 +35,18 @@ import java.util.Optional;
 public interface Server extends CommandSource {
 
     /**
+     * Checks if the server is running in online mode or not.
+     *
+     * @return {@code True} if the server is in online mode, {@code false} otherwise
+     */
+    boolean getOnlineMode();
+
+    /**
+     * Safely shuts down the server.
+     */
+    void shutdown();
+
+    /**
      * {@inheritDoc}
      */
     @Override

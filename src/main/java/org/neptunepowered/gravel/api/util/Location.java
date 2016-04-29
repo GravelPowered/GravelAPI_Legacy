@@ -22,29 +22,33 @@
  * THE SOFTWARE.
  */
 
-package org.neptunepowered.gravel.api.command;
+package org.neptunepowered.gravel.api.util;
 
-import org.neptunepowered.gravel.api.util.Location;
-
-import java.util.Optional;
+import com.flowpowered.math.vector.Vector3d;
+import org.neptunepowered.gravel.api.world.World;
 
 /**
- * Represents a source, of which can use commands.
+ * Represents a 3-dimensional position within a {@link World}.
  */
-public interface CommandSource {
+public class Location extends Vector3d {
+
+    private final World world;
+
+    public Location(World world, double x, double y, double z) {
+        super(x, y, z);
+        this.world = world;
+    }
+
+    public Location(World world, Vector3d vector3d) {
+        this(world, vector3d.getX(), vector3d.getY(), vector3d.getZ());
+    }
 
     /**
-     * Get the name of the source.
-     * For example if the source is a player, this will return their name.
+     * Gets the {@link World} of which this location is within.
      *
-     * @return The name
+     * @return The world
      */
-    String getName();
-
-    /**
-     * Gets the {@link Location} of the source.
-     *
-     * @return The location
-     */
-    Optional<Location> getLocation();
+    public World getWorld() {
+        return this.world;
+    }
 }
